@@ -1,5 +1,5 @@
 <?php
-require_once(_BASEPATH."system/core/Router.php");
+// require_once(_BASEPATH."")
 final class CashControl
 {
     function __construct()

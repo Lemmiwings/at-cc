@@ -1,0 +1,6 @@
+echo "SERVER_HOST: ".$_SERVER['HTTP_HOST'].BR_HTML;
+
+echo "BASEPATH: ".constant("_BASEPATH").BR_HTML;
+echo "URI: ".constant("_URIPATH").BR_HTML;
+
+echo "stack 0 : {$stack[0]} stack 1:  {$stack[1]}".BR_HTML;

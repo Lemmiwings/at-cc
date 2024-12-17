@@ -2,8 +2,7 @@
 /**
  *
  */
-require_once(_BASEPATH."app/config/routes.php");
-final class Router
+class Router
 {
   
   function __construct($args)
@@ -11,7 +10,7 @@ final class Router
 
   }
   function route(){
-    echo "routeado papa: ".$routes['home'];
+    
   }
 }
 

@@ -8,25 +8,23 @@ define("_HOST",$_SERVER['HTTP_HOST']);
 //salto de linea html
 define("BR_HTML","<br>");
 
-echo "SERVER_HOST: ".$_SERVER['HTTP_HOST'].BR_HTML;
-
-echo "BASEPATH: ".constant("_BASEPATH").BR_HTML;
-echo "URI: ".constant("_URIPATH").BR_HTML;
-
 $stack =  str_split(constant("_URIPATH"));
 array_shift($stack);
 $stack = explode('/',implode('', $stack));
 
 if($stack[0]!="index.php"){
-	header("Location: http://"._HOST."/index.php"._URIPATH);
+	header("Location: http://"._HOST."/index.php"._URIPATH,true,303);
 	exit;
 }
 
-echo "stack 0 : ".$stack[0].BR_HTML.$stack[1];
 
-require_once(_BASEPATH."system/core/CashControl.php");
 
-$_init = new CashControl();
-$_init->load();
+$system_path ="system";
 
- ?>
+$application_path="app";
+
+include _BASEPATH.$system_path."/core/load.php";
+
+load($system_path,$application_path);
+
+Load::autoload($system_path,$application_path);
